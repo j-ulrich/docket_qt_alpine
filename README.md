@@ -24,8 +24,3 @@ Image configuration:
 - Tags files for Qt 6.6 (to link in Doxygen documentation)
 - OpenJDK 17 JRE
 - SonarQube Scanner 5.0.1.3006 (located at `/opt/sonar-scanner`)
-
-
-### Other Versions ###
-See the [Version Table](https://github.com/j-ulrich/docker_qt/wiki/Version-Table) in the project
-wiki for an overview of the provided Alpine versions along with the corresponding Qt version.
