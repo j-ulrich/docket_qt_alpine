@@ -22,6 +22,13 @@ RUN apk add --no-cache --update \
                                        curl \
                                        unzip
 
+RUN python3 -m venv /venv \
+ && source /venv/bin/activate \
+ && pip3 install "coverxygen==1.8.1"
+
+ENV PATH=/venv/bin:$PATH \
+    VIRTUAL_ENV=/venv
+
 RUN qbs setup-toolchains --detect && qbs setup-qt /usr/bin/qmake6 qt-6 && qbs config defaultProfile qt-6
 
 COPY sonar-scanner /opt/sonar-scanner/
