@@ -23,4 +23,4 @@ for installedPackage in installedPackagesList:
 	version, revision = packageNameAndVersionSegments[ -2 : ]
 
 	if packageName in interestedPackages:
-		print( f'{interestedPackages[packageName]} {version}' )
+		print( f'{interestedPackages[packageName]} {version}-{revision}' )

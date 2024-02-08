@@ -1,26 +1,26 @@
 FROM alpine:3.19
 
 RUN apk add --no-cache --update \
-                                       cmake \
-                                       g++ \
-                                       gcc \
-                                       make \
-                                       doxygen \
-                                       qt6-qtbase \
-                                       qt6-qtbase-dev \
-                                       qt6-qtdeclarative \
-                                       qt6-qtdeclarative-dev \
-                                       qt6-qtimageformats \
-                                       qt6-qtimageformats-dev \
-                                       qt6-qttools \
-                                       qt6-qttranslations \
-                                       python3 \
-                                       qbs \
-                                       openjdk17-jre-headless \
-                                       py3-pip \
-                                       gcovr \
-                                       curl \
-                                       unzip
+            cmake=3.27.8-r0 \
+            g++ \
+            gcc \
+            make \
+            doxygen \
+            qt6-qtbase=6.6.1-r0 \
+            qt6-qtbase-dev=6.6.1-r0 \
+            qt6-qtdeclarative=6.6.1-r0 \
+            qt6-qtdeclarative-dev=6.6.1-r0 \
+            qt6-qtimageformats=6.6.1-r0 \
+            qt6-qtimageformats-dev=6.6.1-r0 \
+            qt6-qttools=6.6.1-r0 \
+            qt6-qttranslations=6.6.1-r0 \
+            python3 \
+            qbs \
+            openjdk17-jre-headless \
+            py3-pip \
+            gcovr \
+            curl \
+            unzip
 
 RUN python3 -m venv /venv \
  && source /venv/bin/activate \
