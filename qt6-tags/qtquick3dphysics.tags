@@ -13,13 +13,6 @@
         <filename>qml-qtquick3d-physics-charactercontroller.html</filename>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
-            <name>shapeHit</name>
-            <anchorfile>qml-qtquick3d-physics-charactercontroller.html</anchorfile>
-            <anchor>shapeHit-signal</anchor>
-            <arglist>(PhysicsNode *body, vector3D position, vector3D impulse, vector3D normal)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
             <name>teleport</name>
             <anchorfile>qml-qtquick3d-physics-charactercontroller.html</anchorfile>
             <anchor>teleport-method</anchor>

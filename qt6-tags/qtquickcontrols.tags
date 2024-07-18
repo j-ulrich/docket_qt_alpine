@@ -382,13 +382,6 @@
             <anchor>increase-method</anchor>
             <arglist>()</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>wrapped</name>
-            <anchorfile>qml-qtquick-controls-dial.html</anchorfile>
-            <anchor>wrapped-signal</anchor>
-            <arglist>(Dial.WrapDirection direction)</arglist>
-        </member>
     </compound>
     <compound kind="class">
         <name>QtQuick.Controls.Dialog</name>

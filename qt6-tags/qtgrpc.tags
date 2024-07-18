@@ -8,21 +8,21 @@
             <name>call</name>
             <anchorfile>qabstractgrpcchannel.html</anchorfile>
             <anchor>call</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret, const QGrpcCallOptions &amp;options) = 0</arglist>
+            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret) = 0</arglist>
         </member>
         <member kind="function" protection="public" virtualness="pure" static="no">
             <type>virtual std::shared_ptr&lt;QGrpcCallReply&gt;</type>
             <name>call</name>
             <anchorfile>qabstractgrpcchannel.html</anchorfile>
             <anchor>call-1</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, const QGrpcCallOptions &amp;options) = 0</arglist>
+            <arglist>(QAbstractGrpcClient *client, QLatin1StringView method, QLatin1StringView service, QByteArrayView args) = 0</arglist>
         </member>
         <member kind="function" protection="public" virtualness="pure" static="no">
-            <type>virtual std::shared_ptr&lt;QGrpcStream&gt;</type>
+            <type>virtual void</type>
             <name>startStream</name>
             <anchorfile>qabstractgrpcchannel.html</anchorfile>
             <anchor>startStream</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView arg, const QGrpcCallOptions &amp;options) = 0</arglist>
+            <arglist>(QGrpcStream *stream, QLatin1StringView service) = 0</arglist>
         </member>
         <member kind="function" protection="public" virtualness="pure" static="no">
             <type>virtual std::shared_ptr&lt;QAbstractProtobufSerializer&gt;</type>
@@ -36,27 +36,6 @@
         <name>QAbstractGrpcClient</name>
         <filename>qabstractgrpcclient.html</filename>
         <base>QObject</base>
-        <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>QGrpcStatus</type>
-            <name>call</name>
-            <anchorfile>qabstractgrpcclient.html</anchorfile>
-            <anchor>call</anchor>
-            <arglist>(QLatin1StringView method, const QProtobufMessage &amp;arg, ReturnType &amp;ret, const QGrpcCallOptions &amp;options)</arglist>
-        </member>
-        <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>std::shared_ptr&lt;QGrpcCallReply&gt;</type>
-            <name>call</name>
-            <anchorfile>qabstractgrpcclient.html</anchorfile>
-            <anchor>call-1</anchor>
-            <arglist>(QLatin1StringView method, const QProtobufMessage &amp;arg, const QGrpcCallOptions &amp;options)</arglist>
-        </member>
-        <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>std::shared_ptr&lt;QGrpcStream&gt;</type>
-            <name>startStream</name>
-            <anchorfile>qabstractgrpcclient.html</anchorfile>
-            <anchor>startStream</anchor>
-            <arglist>(QLatin1StringView method, const QProtobufMessage &amp;arg, const QGrpcCallOptions &amp;options)</arglist>
-        </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
             <name>attachChannel</name>
@@ -64,79 +43,47 @@
             <anchor>attachChannel</anchor>
             <arglist>(const std::shared_ptr&lt;QAbstractGrpcChannel&gt; &amp;channel)</arglist>
         </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>errorOccurred</name>
+            <anchorfile>qabstractgrpcclient.html</anchorfile>
+            <anchor>errorOccurred</anchor>
+            <arglist>(const QGrpcStatus &amp;status)</arglist>
+        </member>
     </compound>
     <compound kind="class">
-        <name>QGrpcCallOptions</name>
-        <filename>qgrpccalloptions.html</filename>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcCallOptions &amp;</type>
-            <name>operator=</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>operator-eq</anchor>
-            <arglist>(const QGrpcCallOptions &amp;other)</arglist>
+        <name>QAbstractGrpcCredentials</name>
+        <filename>qabstractgrpccredentials.html</filename>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>callCredentials</name>
+            <anchorfile>qabstractgrpccredentials.html</anchorfile>
+            <anchor>callCredentials</anchor>
+            <arglist>() const const = 0</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcCallOptions &amp;</type>
-            <name>withDeadline</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>withDeadline</anchor>
-            <arglist>(std::chrono::milliseconds deadline)</arglist>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>channelCredentials</name>
+            <anchorfile>qabstractgrpccredentials.html</anchorfile>
+            <anchor>channelCredentials</anchor>
+            <arglist>() const const = 0</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcCallOptions &amp;</type>
-            <name>withMaxRetryAttempts</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>withMaxRetryAttempts</anchor>
-            <arglist>(qint64 maxRetryAttempts)</arglist>
+        <member kind="typedef" type="">
+            <name>QGrpcCredentialMap</name>
+            <anchorfile>qabstractgrpccredentials.html</anchorfile>
+            <anchor>QGrpcCredentialMap-typedef</anchor>
+            <arglist></arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcCallOptions &amp;</type>
-            <name>withMetadata</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>withMetadata</anchor>
-            <arglist>(const QGrpcMetadata &amp;metadata)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QGrpcCallOptions</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>QGrpcCallOptions</anchor>
-            <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QGrpcCallOptions</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>QGrpcCallOptions-1</anchor>
-            <arglist>(const QGrpcCallOptions &amp;other)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>~QGrpcCallOptions</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>dtor.QGrpcCallOptions</anchor>
-            <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcMetadata</type>
-            <name>metadata</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>metadata</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>std::optional&lt;qint64&gt;</type>
-            <name>maxRetryAttempts</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>maxRetryAttempts</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>std::optional&lt;std::chrono::milliseconds&gt;</type>
-            <name>deadline</name>
-            <anchorfile>qgrpccalloptions.html</anchorfile>
-            <anchor>deadline</anchor>
-            <arglist>() const const</arglist>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcCallCredentials</name>
+        <filename>qgrpccallcredentials.html</filename>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>operator()</name>
+            <anchorfile>qgrpccallcredentials.html</anchorfile>
+            <anchor>operator-28-29</anchor>
+            <arglist>()() const const = 0</arglist>
         </member>
     </compound>
     <compound kind="class">
@@ -173,29 +120,36 @@
             <type></type>
             <name>QGrpcChannel</name>
             <anchorfile>qgrpcchannel.html</anchorfile>
+            <anchor>QGrpcChannel-1</anchor>
+            <arglist>(const QUrl &amp;url, QGrpcChannel::NativeGrpcChannelCredentials credentialsType)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QGrpcChannel</name>
+            <anchorfile>qgrpcchannel.html</anchorfile>
             <anchor>QGrpcChannel</anchor>
-            <arglist>(const QGrpcChannelOptions &amp;options, QGrpcChannel::NativeGrpcChannelCredentials credentialsType)</arglist>
+            <arglist>(const QUrl &amp;url, QGrpcChannel::NativeGrpcChannelCredentials credentialsType, const QStringList &amp;credentialsList)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual QGrpcStatus</type>
             <name>call</name>
             <anchorfile>qgrpcchannel.html</anchorfile>
             <anchor>call</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual std::shared_ptr&lt;QGrpcCallReply&gt;</type>
             <name>call</name>
             <anchorfile>qgrpcchannel.html</anchorfile>
             <anchor>call-1</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QAbstractGrpcClient *client, QLatin1StringView method, QLatin1StringView service, QByteArrayView args) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
-            <type>virtual std::shared_ptr&lt;QGrpcStream&gt;</type>
+            <type>virtual void</type>
             <name>startStream</name>
             <anchorfile>qgrpcchannel.html</anchorfile>
             <anchor>startStream</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView arg, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QGrpcStream *stream, QLatin1StringView service) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual </type>
@@ -213,91 +167,61 @@
         </member>
     </compound>
     <compound kind="class">
-        <name>QGrpcChannelOptions</name>
-        <filename>qgrpcchanneloptions.html</filename>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcChannelOptions &amp;</type>
-            <name>operator=</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>operator-eq</anchor>
-            <arglist>(const QGrpcChannelOptions &amp;other)</arglist>
+        <name>QGrpcChannelCredentials</name>
+        <filename>qgrpcchannelcredentials.html</filename>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>channelCredentials</name>
+            <anchorfile>qgrpcchannelcredentials.html</anchorfile>
+            <anchor>channelCredentials</anchor>
+            <arglist>() const const = 0</arglist>
         </member>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcCredentials</name>
+        <filename>qgrpccredentials.html</filename>
+        <base>QAbstractGrpcCredentials</base>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcChannelOptions &amp;</type>
-            <name>withDeadline</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>withDeadline</anchor>
-            <arglist>(std::chrono::milliseconds deadline)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcChannelOptions &amp;</type>
-            <name>withHost</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>withHost</anchor>
-            <arglist>(const QUrl &amp;host)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcChannelOptions &amp;</type>
-            <name>withMetadata</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>withMetadata</anchor>
-            <arglist>(const QGrpcMetadata &amp;metadata)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcChannelOptions &amp;</type>
-            <name>withSslConfiguration</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>withSslConfiguration</anchor>
-            <arglist>(const QSslConfiguration &amp;sslConfiguration)</arglist>
+            <type></type>
+            <name>QGrpcCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>QGrpcCredentials-1</anchor>
+            <arglist>(const Call &amp;call)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
-            <name>QGrpcChannelOptions</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>QGrpcChannelOptions-1</anchor>
-            <arglist>(const QGrpcChannelOptions &amp;other)</arglist>
+            <name>QGrpcCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>QGrpcCredentials</anchor>
+            <arglist>(const Call &amp;call, const Channel &amp;channel)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
-            <name>QGrpcChannelOptions</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>QGrpcChannelOptions</anchor>
-            <arglist>(const QUrl &amp;host)</arglist>
+            <name>QGrpcCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>QGrpcCredentials-2</anchor>
+            <arglist>(const Channel &amp;channel)</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>~QGrpcChannelOptions</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>dtor.QGrpcChannelOptions</anchor>
-            <arglist>()</arglist>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QGrpcCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>dtor.QGrpcCredentials</anchor>
+            <arglist>() override</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcMetadata</type>
-            <name>metadata</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>metadata</anchor>
-            <arglist>() const const</arglist>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>callCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>callCredentials</anchor>
+            <arglist>() const const override</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QUrl</type>
-            <name>host</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>host</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>std::optional&lt;QSslConfiguration&gt;</type>
-            <name>sslConfiguration</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>sslConfiguration</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>std::optional&lt;std::chrono::milliseconds&gt;</type>
-            <name>deadline</name>
-            <anchorfile>qgrpcchanneloptions.html</anchorfile>
-            <anchor>deadline</anchor>
-            <arglist>() const const</arglist>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>channelCredentials</name>
+            <anchorfile>qgrpccredentials.html</anchorfile>
+            <anchor>channelCredentials</anchor>
+            <arglist>() const const override</arglist>
         </member>
     </compound>
     <compound kind="class">
@@ -309,28 +233,28 @@
             <name>QGrpcHttp2Channel</name>
             <anchorfile>qgrpchttp2channel.html</anchorfile>
             <anchor>QGrpcHttp2Channel</anchor>
-            <arglist>(const QGrpcChannelOptions &amp;options)</arglist>
+            <arglist>(const QUrl &amp;url, std::unique_ptr&lt;QAbstractGrpcCredentials&gt; credentials)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual QGrpcStatus</type>
             <name>call</name>
             <anchorfile>qgrpchttp2channel.html</anchorfile>
             <anchor>call</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, QByteArray &amp;ret) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual std::shared_ptr&lt;QGrpcCallReply&gt;</type>
             <name>call</name>
             <anchorfile>qgrpchttp2channel.html</anchorfile>
             <anchor>call-1</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView args, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QAbstractGrpcClient *client, QLatin1StringView method, QLatin1StringView service, QByteArrayView args) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
-            <type>virtual std::shared_ptr&lt;QGrpcStream&gt;</type>
+            <type>virtual void</type>
             <name>startStream</name>
             <anchorfile>qgrpchttp2channel.html</anchorfile>
             <anchor>startStream</anchor>
-            <arglist>(QLatin1StringView method, QLatin1StringView service, QByteArrayView arg, const QGrpcCallOptions &amp;options) override</arglist>
+            <arglist>(QGrpcStream *grpcStream, QLatin1StringView service) override</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual </type>
@@ -344,6 +268,44 @@
             <name>serializer</name>
             <anchorfile>qgrpchttp2channel.html</anchorfile>
             <anchor>serializer</anchor>
+            <arglist>() const const override</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcInsecureCallCredentials</name>
+        <filename>qgrpcinsecurecallcredentials.html</filename>
+        <base>QGrpcCallCredentials</base>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QGrpcInsecureCallCredentials</name>
+            <anchorfile>qgrpcinsecurecallcredentials.html</anchorfile>
+            <anchor>dtor.QGrpcInsecureCallCredentials</anchor>
+            <arglist>() override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>operator()</name>
+            <anchorfile>qgrpcinsecurecallcredentials.html</anchorfile>
+            <anchor>operator-28-29</anchor>
+            <arglist>()() const const override</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcInsecureChannelCredentials</name>
+        <filename>qgrpcinsecurechannelcredentials.html</filename>
+        <base>QGrpcChannelCredentials</base>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QGrpcInsecureChannelCredentials</name>
+            <anchorfile>qgrpcinsecurechannelcredentials.html</anchorfile>
+            <anchor>dtor.QGrpcInsecureChannelCredentials</anchor>
+            <arglist>() override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>channelCredentials</name>
+            <anchorfile>qgrpcinsecurechannelcredentials.html</anchorfile>
+            <anchor>channelCredentials</anchor>
             <arglist>() const const override</arglist>
         </member>
     </compound>
@@ -380,32 +342,37 @@
             <arglist>(const QByteArray &amp;data)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setMetadata</name>
-            <anchorfile>qgrpcoperation.html</anchorfile>
-            <anchor>setMetadata-1</anchor>
-            <arglist>(QGrpcMetadata &amp;&amp;metadata)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setMetadata</name>
-            <anchorfile>qgrpcoperation.html</anchorfile>
-            <anchor>setMetadata</anchor>
-            <arglist>(const QGrpcMetadata &amp;metadata)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QGrpcMetadata</type>
-            <name>metadata</name>
-            <anchorfile>qgrpcoperation.html</anchorfile>
-            <anchor>metadata</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type>T</type>
             <name>read</name>
             <anchorfile>qgrpcoperation.html</anchorfile>
             <anchor>read</anchor>
             <arglist>() const const</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcSslCredentials</name>
+        <filename>qgrpcsslcredentials.html</filename>
+        <base>QGrpcChannelCredentials</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QGrpcSslCredentials</name>
+            <anchorfile>qgrpcsslcredentials.html</anchorfile>
+            <anchor>QGrpcSslCredentials</anchor>
+            <arglist>(const QSslConfiguration &amp;configuration)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QGrpcSslCredentials</name>
+            <anchorfile>qgrpcsslcredentials.html</anchorfile>
+            <anchor>dtor.QGrpcSslCredentials</anchor>
+            <arglist>() override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>channelCredentials</name>
+            <anchorfile>qgrpcsslcredentials.html</anchorfile>
+            <anchor>channelCredentials</anchor>
+            <arglist>() const const override</arglist>
         </member>
     </compound>
     <compound kind="class">
@@ -628,17 +595,17 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
+            <name>handler</name>
+            <anchorfile>qgrpcstream.html</anchorfile>
+            <anchor>handler</anchor>
+            <arglist>(const QByteArray &amp;data)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
             <name>messageReceived</name>
             <anchorfile>qgrpcstream.html</anchorfile>
             <anchor>messageReceived</anchor>
             <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>updateData</name>
-            <anchorfile>qgrpcstream.html</anchorfile>
-            <anchor>updateData</anchor>
-            <arglist>(const QByteArray &amp;data)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual </type>
@@ -660,6 +627,39 @@
             <anchorfile>qgrpcstream.html</anchorfile>
             <anchor>method</anchor>
             <arglist>() const const</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QGrpcUserPasswordCredentials</name>
+        <filename>qgrpcuserpasswordcredentials.html</filename>
+        <base>QGrpcCallCredentials</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QGrpcUserPasswordCredentials</name>
+            <anchorfile>qgrpcuserpasswordcredentials.html</anchorfile>
+            <anchor>QGrpcUserPasswordCredentials-1</anchor>
+            <arglist>(const QByteArray &amp;userNameField, const QString &amp;userName, const QByteArray &amp;passwordField, const QString &amp;password)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QGrpcUserPasswordCredentials</name>
+            <anchorfile>qgrpcuserpasswordcredentials.html</anchorfile>
+            <anchor>QGrpcUserPasswordCredentials</anchor>
+            <arglist>(const QString &amp;userName, const QString &amp;password)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QGrpcUserPasswordCredentials</name>
+            <anchorfile>qgrpcuserpasswordcredentials.html</anchorfile>
+            <anchor>dtor.QGrpcUserPasswordCredentials</anchor>
+            <arglist>() override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QGrpcCredentialMap</type>
+            <name>operator()</name>
+            <anchorfile>qgrpcuserpasswordcredentials.html</anchorfile>
+            <anchor>operator-28-29</anchor>
+            <arglist>()() const const override</arglist>
         </member>
     </compound>
 </tagfile>

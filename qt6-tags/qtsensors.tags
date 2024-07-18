@@ -2319,10 +2319,6 @@
         <filename>qml-qtsensors-sensorreading.html</filename>
     </compound>
     <compound kind="class">
-        <name>qoutputrange</name>
-        <filename>qoutputrange.html</filename>
-    </compound>
-    <compound kind="class">
         <name>QtSensors.TiltReading</name>
         <filename>qml-qtsensors-tiltreading.html</filename>
     </compound>
@@ -2336,5 +2332,9 @@
             <anchor>calibrate-method</anchor>
             <arglist>()</arglist>
         </member>
+    </compound>
+    <compound kind="class">
+        <name>qoutputrange</name>
+        <filename>qoutputrange.html</filename>
     </compound>
 </tagfile>

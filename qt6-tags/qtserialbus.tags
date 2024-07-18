@@ -953,6 +953,12 @@
             <anchor>FrameError-enum</anchor>
             <arglist></arglist>
         </member>
+        <member kind="typedef" type="">
+            <name>FrameId</name>
+            <anchorfile>qcanbusframe.html</anchorfile>
+            <anchor>FrameId-typedef</anchor>
+            <arglist></arglist>
+        </member>
     </compound>
     <compound kind="class">
         <name>QCanBusFrame::TimeStamp</name>

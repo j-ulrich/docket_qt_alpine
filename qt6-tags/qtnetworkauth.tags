@@ -218,13 +218,6 @@
             <anchor>prepareRequest</anchor>
             <arglist>(QNetworkRequest *request, const QByteArray &amp;verb, const QByteArray &amp;body) = 0</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>requestFailed</name>
-            <anchorfile>qabstractoauth.html</anchorfile>
-            <anchor>requestFailed</anchor>
-            <arglist>(const QAbstractOAuth::Error error)</arglist>
-        </member>
         <member kind="function" protection="protected" virtualness="virtual" static="no">
             <type>virtual void</type>
             <name>resourceOwnerAuthorization</name>
@@ -736,13 +729,6 @@
             <anchorfile>qabstractoauthreplyhandler.html</anchorfile>
             <anchor>replyDataReceived</anchor>
             <arglist>(const QByteArray &amp;data)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>tokenRequestErrorOccurred</name>
-            <anchorfile>qabstractoauthreplyhandler.html</anchorfile>
-            <anchor>tokenRequestErrorOccurred</anchor>
-            <arglist>(QAbstractOAuth::Error error, const QString &amp;errorString)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>

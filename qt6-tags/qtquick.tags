@@ -1303,6 +1303,13 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
+            <name>pooled</name>
+            <anchorfile>qml-qtquick-gridview.html</anchorfile>
+            <anchor>pooled-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
             <name>positionViewAtBeginning</name>
             <anchorfile>qml-qtquick-gridview.html</anchorfile>
             <anchor>positionViewAtBeginning-method</anchor>
@@ -1327,6 +1334,13 @@
             <name>remove</name>
             <anchorfile>qml-qtquick-gridview.html</anchorfile>
             <anchor>remove-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>reused</name>
+            <anchorfile>qml-qtquick-gridview.html</anchorfile>
+            <anchor>reused-signal</anchor>
             <arglist>()</arglist>
         </member>
     </compound>
@@ -1822,10 +1836,6 @@
     <compound kind="class">
         <name>QtQuick.Layouts.Layout</name>
         <filename>qml-qtquick-layouts-layout.html</filename>
-    </compound>
-    <compound kind="class">
-        <name>QtQuick.Layouts.LayoutItemProxy</name>
-        <filename>qml-qtquick-layouts-layoutitemproxy.html</filename>
     </compound>
     <compound kind="class">
         <name>QtQuick.LayoutMirroring</name>
@@ -2478,7 +2488,6 @@
         <name>QNativeInterface</name>
         <filename>qnativeinterface-sub-qtquick.html</filename>
         <class>QNativeInterface::QSGD3D11Texture</class>
-        <class>QNativeInterface::QSGD3D12Texture</class>
         <class>QNativeInterface::QSGMetalTexture</class>
         <class>QNativeInterface::QSGOpenGLTexture</class>
         <class>QNativeInterface::QSGVulkanTexture</class>
@@ -2497,24 +2506,6 @@
             <type>virtual void *</type>
             <name>nativeTexture</name>
             <anchorfile>qnativeinterface-qsgd3d11texture.html</anchorfile>
-            <anchor>nativeTexture</anchor>
-            <arglist>() const const = 0</arglist>
-        </member>
-    </compound>
-    <compound kind="class">
-        <name>QNativeInterface::QSGD3D12Texture</name>
-        <filename>qnativeinterface-qsgd3d12texture.html</filename>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QSGTexture *</type>
-            <name>fromNative</name>
-            <anchorfile>qnativeinterface-qsgd3d12texture.html</anchorfile>
-            <anchor>fromNative</anchor>
-            <arglist>(void *texture, int resourceState, QQuickWindow *window, const QSize &amp;size, QQuickWindow::CreateTextureOptions options)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="pure" static="no">
-            <type>virtual void *</type>
-            <name>nativeTexture</name>
-            <anchorfile>qnativeinterface-qsgd3d12texture.html</anchorfile>
             <anchor>nativeTexture</anchor>
             <arglist>() const const = 0</arglist>
         </member>
@@ -2828,13 +2819,6 @@
             <arglist>(bool enable)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setTimestamps</name>
-            <anchorfile>qquickgraphicsconfiguration.html</anchorfile>
-            <anchor>setTimestamps</anchor>
-            <arglist>(bool enable)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
             <name>~QQuickGraphicsConfiguration</name>
             <anchorfile>qquickgraphicsconfiguration.html</anchorfile>
@@ -2897,13 +2881,6 @@
             <anchor>prefersSoftwareDevice</anchor>
             <arglist>() const const</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>bool</type>
-            <name>timestampsEnabled</name>
-            <anchorfile>qquickgraphicsconfiguration.html</anchorfile>
-            <anchor>timestampsEnabled</anchor>
-            <arglist>() const const</arglist>
-        </member>
     </compound>
     <compound kind="class">
         <name>QQuickGraphicsDevice</name>
@@ -2949,13 +2926,6 @@
             <anchorfile>qquickgraphicsdevice.html</anchorfile>
             <anchor>fromPhysicalDevice</anchor>
             <arglist>(VkPhysicalDevice physicalDevice)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QQuickGraphicsDevice</type>
-            <name>fromRhi</name>
-            <anchorfile>qquickgraphicsdevice.html</anchorfile>
-            <anchor>fromRhi</anchor>
-            <arglist>(QRhi *rhi)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -5115,20 +5085,6 @@
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhi *</type>
-            <name>rhi</name>
-            <anchorfile>qquickrendercontrol.html</anchorfile>
-            <anchor>rhi</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhiCommandBuffer *</type>
-            <name>commandBuffer</name>
-            <anchorfile>qquickrendercontrol.html</anchorfile>
-            <anchor>commandBuffer</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type>int</type>
             <name>samples</name>
             <anchorfile>qquickrendercontrol.html</anchorfile>
@@ -5152,13 +5108,6 @@
             <anchorfile>qquickrendertarget.html</anchorfile>
             <anchor>fromD3D11Texture</anchor>
             <arglist>(void *texture, uint format, const QSize &amp;pixelSize, int sampleCount)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QQuickRenderTarget</type>
-            <name>fromD3D12Texture</name>
-            <anchorfile>qquickrendertarget.html</anchorfile>
-            <anchor>fromD3D12Texture</anchor>
-            <arglist>(void *texture, int resourceState, uint format, const QSize &amp;pixelSize, int sampleCount)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="yes">
             <type>QQuickRenderTarget</type>
@@ -5201,13 +5150,6 @@
             <anchorfile>qquickrendertarget.html</anchorfile>
             <anchor>fromPaintDevice</anchor>
             <arglist>(QPaintDevice *device)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QQuickRenderTarget</type>
-            <name>fromRhiRenderTarget</name>
-            <anchorfile>qquickrendertarget.html</anchorfile>
-            <anchor>fromRhiRenderTarget</anchor>
-            <arglist>(QRhiRenderTarget *renderTarget)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="yes">
             <type>QQuickRenderTarget</type>
@@ -6483,20 +6425,6 @@
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhi *</type>
-            <name>rhi</name>
-            <anchorfile>qquickwindow.html</anchorfile>
-            <anchor>rhi</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhiSwapChain *</type>
-            <name>swapChain</name>
-            <anchorfile>qquickwindow.html</anchorfile>
-            <anchor>swapChain</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type>QSGImageNode *</type>
             <name>createImageNode</name>
             <anchorfile>qquickwindow.html</anchorfile>
@@ -6537,13 +6465,6 @@
             <anchorfile>qquickwindow.html</anchorfile>
             <anchor>createTextureFromImage</anchor>
             <arglist>(const QImage &amp;image, QQuickWindow::CreateTextureOptions options) const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QSGTexture *</type>
-            <name>createTextureFromRhiTexture</name>
-            <anchorfile>qquickwindow.html</anchorfile>
-            <anchor>createTextureFromRhiTexture</anchor>
-            <arglist>(QRhiTexture *texture, QQuickWindow::CreateTextureOptions options) const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
@@ -8609,20 +8530,6 @@
             <anchor>rect</anchor>
             <arglist>() const const</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhiCommandBuffer *</type>
-            <name>commandBuffer</name>
-            <anchorfile>qsgrendernode.html</anchorfile>
-            <anchor>commandBuffer</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QRhiRenderTarget *</type>
-            <name>renderTarget</name>
-            <anchorfile>qsgrendernode.html</anchorfile>
-            <anchor>renderTarget</anchor>
-            <arglist>() const const</arglist>
-        </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">
             <type>virtual QSGRenderNode::RenderingFlags</type>
             <name>flags</name>
@@ -8730,12 +8637,6 @@
         </member>
         <member kind="enumvalue">
             <name>Null</name>
-            <anchorfile>qsgrendererinterface.html</anchorfile>
-            <anchor>GraphicsApi-enum</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="enumvalue">
-            <name>Direct3D12</name>
             <anchorfile>qsgrendererinterface.html</anchorfile>
             <anchor>GraphicsApi-enum</anchor>
             <arglist></arglist>
@@ -8884,18 +8785,6 @@
         </member>
         <member kind="enumvalue">
             <name>RedirectPaintDevice</name>
-            <anchorfile>qsgrendererinterface.html</anchorfile>
-            <anchor>Resource-enum</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="enumvalue">
-            <name>GraphicsQueueFamilyIndexResource</name>
-            <anchorfile>qsgrendererinterface.html</anchorfile>
-            <anchor>Resource-enum</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="enumvalue">
-            <name>GraphicsQueueIndexResource</name>
             <anchorfile>qsgrendererinterface.html</anchorfile>
             <anchor>Resource-enum</anchor>
             <arglist></arglist>
@@ -9323,13 +9212,6 @@
             <anchor>QSGTexture</anchor>
             <arglist>()</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="virtual" static="no">
-            <type>virtual void</type>
-            <name>commitTextureOperations</name>
-            <anchorfile>qsgtexture.html</anchorfile>
-            <anchor>commitTextureOperations</anchor>
-            <arglist>(QRhi *rhi, QRhiResourceUpdateBatch *resourceUpdates)</arglist>
-        </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
             <name>setAnisotropyLevel</name>
@@ -9391,13 +9273,6 @@
             <name>normalizedTextureSubRect</name>
             <anchorfile>qsgtexture.html</anchorfile>
             <anchor>normalizedTextureSubRect</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="virtual" static="no">
-            <type>virtual QRhiTexture *</type>
-            <name>rhiTexture</name>
-            <anchorfile>qsgtexture.html</anchorfile>
-            <anchor>rhiTexture</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="virtual" static="no">

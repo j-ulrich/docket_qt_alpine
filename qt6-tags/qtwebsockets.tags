@@ -116,13 +116,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
-            <name>authenticationRequired</name>
-            <anchorfile>qwebsocket.html</anchorfile>
-            <anchor>authenticationRequired</anchor>
-            <arglist>(QAuthenticator *authenticator)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
             <name>binaryFrameReceived</name>
             <anchorfile>qwebsocket.html</anchorfile>
             <anchor>binaryFrameReceived</anchor>

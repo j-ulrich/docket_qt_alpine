@@ -1094,7 +1094,7 @@
             <type></type>
             <name>QJSPrimitiveValue</name>
             <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>QJSPrimitiveValue-11</anchor>
+            <anchor>QJSPrimitiveValue-10</anchor>
             <arglist>(QMetaType type, const void *value)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -1115,7 +1115,7 @@
             <type></type>
             <name>QJSPrimitiveValue</name>
             <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>QJSPrimitiveValue-10</anchor>
+            <anchor>QJSPrimitiveValue-9</anchor>
             <arglist>(const QVariant &amp;value)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -1175,31 +1175,10 @@
             <arglist>(const QJSPrimitiveValue &amp;lhs, const QJSPrimitiveValue &amp;rhs)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void *</type>
-            <name>data</name>
-            <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>data</anchor>
-            <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QJSPrimitiveValue</type>
-            <name>to</name>
-            <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>to</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type>QJSPrimitiveValue::Type</type>
             <name>type</name>
             <anchorfile>qjsprimitivevalue.html</anchorfile>
             <anchor>type</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QMetaType</type>
-            <name>metaType</name>
-            <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>metaType</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -1228,20 +1207,6 @@
             <name>toBoolean</name>
             <anchorfile>qjsprimitivevalue.html</anchorfile>
             <anchor>toBoolean</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>const void *</type>
-            <name>constData</name>
-            <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>constData</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>const void *</type>
-            <name>data</name>
-            <anchorfile>qjsprimitivevalue.html</anchorfile>
-            <anchor>data-1</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -2389,16 +2354,9 @@
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
             <name>QML_ADDED_IN_MINOR_VERSION</name>
-            <anchorfile>qqmlengine-obsolete.html</anchorfile>
+            <anchorfile>qqmlengine.html</anchorfile>
             <anchor>QML_ADDED_IN_MINOR_VERSION</anchor>
             <arglist>(VERSION)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QML_ADDED_IN_VERSION</name>
-            <anchorfile>qqmlengine.html</anchorfile>
-            <anchor>QML_ADDED_IN_VERSION</anchor>
-            <arglist>(MAJOR, MINOR)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -2494,16 +2452,9 @@
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
             <name>QML_REMOVED_IN_MINOR_VERSION</name>
-            <anchorfile>qqmlengine-obsolete.html</anchorfile>
+            <anchorfile>qqmlengine.html</anchorfile>
             <anchor>QML_REMOVED_IN_MINOR_VERSION</anchor>
             <arglist>(VERSION)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QML_REMOVED_IN_VERSION</name>
-            <anchorfile>qqmlengine.html</anchorfile>
-            <anchor>QML_REMOVED_IN_VERSION</anchor>
-            <arglist>(MAJOR, MINOR)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -2763,13 +2714,6 @@
             <anchorfile>qqmlengine.html</anchorfile>
             <anchor>exit</anchor>
             <arglist>(int retCode)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>markCurrentFunctionAsTranslationBinding</name>
-            <anchorfile>qqmlengine.html</anchorfile>
-            <anchor>markCurrentFunctionAsTranslationBinding</anchor>
-            <arglist>()</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
@@ -4956,13 +4900,6 @@
             <anchorfile>qml-qtqml-xmlhttprequest.html</anchorfile>
             <anchor>open-method</anchor>
             <arglist>(method, url, async)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>overrideMimeType</name>
-            <anchorfile>qml-qtqml-xmlhttprequest.html</anchorfile>
-            <anchor>overrideMimeType-method</anchor>
-            <arglist>(mime)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>

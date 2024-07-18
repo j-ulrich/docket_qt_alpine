@@ -1,19 +1,19 @@
-FROM alpine:3.19
+FROM alpine:3.18
 
 RUN apk add --no-cache --update \
-            cmake=3.27.8-r0 \
+            cmake=3.26.5-r0 \
             g++ \
             gcc \
             make \
             doxygen \
-            qt6-qtbase=6.6.1-r0 \
-            qt6-qtbase-dev=6.6.1-r0 \
-            qt6-qtdeclarative=6.6.1-r0 \
-            qt6-qtdeclarative-dev=6.6.1-r0 \
-            qt6-qtimageformats=6.6.1-r0 \
-            qt6-qtimageformats-dev=6.6.1-r0 \
-            qt6-qttools=6.6.1-r0 \
-            qt6-qttranslations=6.6.1-r0 \
+            qt6-qtbase=6.5.2-r0 \
+            qt6-qtbase-dev=6.5.2-r0 \
+            qt6-qtdeclarative=6.5.2-r0 \
+            qt6-qtdeclarative-dev=6.5.2-r0 \
+            qt6-qtimageformats=6.5.2-r1 \
+            qt6-qtimageformats-dev=6.5.2-r1 \
+            qt6-qttools=6.5.2-r0 \
+            qt6-qttranslations=6.5.2-r0 \
             python3 \
             qbs \
             openjdk17-jre-headless \
@@ -22,12 +22,12 @@ RUN apk add --no-cache --update \
             curl \
             unzip
 
-RUN python3 -m venv /venv \
- && source /venv/bin/activate \
+RUN python3 -m venv ~/.virtualenvs/coverxygen \
+ && . ~/.virtualenvs/coverxygen/bin/activate \
  && pip3 install "coverxygen==1.8.1"
 
-ENV PATH=/venv/bin:$PATH \
-    VIRTUAL_ENV=/venv
+ENV PATH=/root/.virtualenvs/coverxygen/bin:$PATH \
+    VIRTUAL_ENV=/root/.virtualenvs/coverxygen/bin
 
 RUN qbs setup-toolchains --detect && qbs setup-qt /usr/bin/qmake6 qt-6 && qbs config defaultProfile qt-6
 

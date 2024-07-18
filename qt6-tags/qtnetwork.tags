@@ -1130,12 +1130,6 @@
             <anchor>Error-enum</anchor>
             <arglist></arglist>
         </member>
-        <member kind="enumvalue">
-            <name>TimeoutError</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>Error-enum</anchor>
-            <arglist></arglist>
-        </member>
         <member kind="enumeration">
             <name>Type</name>
             <anchorfile>qdnslookup.html</anchorfile>
@@ -1217,13 +1211,6 @@
             <arglist>()</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QBindable&lt;quint16&gt;</type>
-            <name>bindableNameserverPort</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>nameserverPort-prop</anchor>
-            <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
             <name>QDnsLookup</name>
             <anchorfile>qdnslookup.html</anchorfile>
@@ -1236,13 +1223,6 @@
             <anchorfile>qdnslookup.html</anchorfile>
             <anchor>QDnsLookup-2</anchor>
             <arglist>(QDnsLookup::Type type, const QString &amp;name, const QHostAddress &amp;nameserver, QObject *parent)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QDnsLookup</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>QDnsLookup-3</anchor>
-            <arglist>(QDnsLookup::Type type, const QString &amp;name, const QHostAddress &amp;nameserver, quint16 port, QObject *parent)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -1288,13 +1268,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
-            <name>nameserverPortChanged</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>nameserverPort-prop</anchor>
-            <arglist>(quint16 port)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
             <name>setName</name>
             <anchorfile>qdnslookup.html</anchorfile>
             <anchor>name-prop</anchor>
@@ -1306,20 +1279,6 @@
             <anchorfile>qdnslookup.html</anchorfile>
             <anchor>nameserver-prop</anchor>
             <arglist>(const QHostAddress &amp;nameserver)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setNameserver</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>setNameserver-1</anchor>
-            <arglist>(const QHostAddress &amp;nameserver, quint16 port)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setNameserverPort</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>nameserverPort-prop</anchor>
-            <arglist>(quint16 port)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
@@ -1433,13 +1392,6 @@
             <anchor>isFinished</anchor>
             <arglist>() const const</arglist>
         </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>quint16</type>
-            <name>nameserverPort</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>nameserverPort-prop</anchor>
-            <arglist>() const const</arglist>
-        </member>
         <member kind="property" type="Error">
             <name>error</name>
             <anchorfile>qdnslookup.html</anchorfile>
@@ -1462,12 +1414,6 @@
             <name>nameserver</name>
             <anchorfile>qdnslookup.html</anchorfile>
             <anchor>nameserver-prop</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="property" type="quint16">
-            <name>nameserverPort</name>
-            <anchorfile>qdnslookup.html</anchorfile>
-            <anchor>nameserverPort-prop</anchor>
             <arglist></arglist>
         </member>
         <member kind="property" type="Type">
@@ -2440,13 +2386,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>bool</type>
-            <name>isPrivateUse</name>
-            <anchorfile>qhostaddress.html</anchorfile>
-            <anchor>isPrivateUse</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>bool</type>
             <name>isSiteLocal</name>
             <anchorfile>qhostaddress.html</anchorfile>
             <anchor>isSiteLocal</anchor>
@@ -2594,13 +2533,6 @@
             <type>int</type>
             <name>lookupHost</name>
             <anchorfile>qhostinfo.html</anchorfile>
-            <anchor>lookupHost-2</anchor>
-            <arglist>(const QString &amp;name, Functor &amp;&amp;functor)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>int</type>
-            <name>lookupHost</name>
-            <anchorfile>qhostinfo.html</anchorfile>
             <anchor>lookupHost</anchor>
             <arglist>(const QString &amp;name, QObject *receiver, const char *member)</arglist>
         </member>
@@ -2608,7 +2540,7 @@
             <type>int</type>
             <name>lookupHost</name>
             <anchorfile>qhostinfo.html</anchorfile>
-            <anchor>lookupHost-1</anchor>
+            <anchor>lookupHost-2</anchor>
             <arglist>(const QString &amp;name, const QObject *context, Functor functor)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="yes">

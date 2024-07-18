@@ -2382,23 +2382,6 @@
         <name>QLocation</name>
         <filename>qlocation.html</filename>
         <member kind="enumeration">
-            <name>ReferenceSurface</name>
-            <anchorfile>qlocation.html</anchorfile>
-            <anchor>ReferenceSurface-enum</anchor>
-        </member>
-        <member kind="enumvalue">
-            <name>Map</name>
-            <anchorfile>qlocation.html</anchorfile>
-            <anchor>ReferenceSurface-enum</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="enumvalue">
-            <name>Globe</name>
-            <anchorfile>qlocation.html</anchorfile>
-            <anchor>ReferenceSurface-enum</anchor>
-            <arglist></arglist>
-        </member>
-        <member kind="enumeration">
             <name>Visibility</name>
             <anchorfile>qlocation.html</anchorfile>
             <anchor>Visibility-enum</anchor>

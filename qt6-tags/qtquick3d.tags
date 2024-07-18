@@ -25,6 +25,10 @@
         <filename>qml-qtquick3d-effects-blur.html</filename>
     </compound>
     <compound kind="class">
+        <name>QtQuick3D.Bounds</name>
+        <filename>qml-qtquick3d-bounds.html</filename>
+    </compound>
+    <compound kind="class">
         <name>QtQuick3D.Effects.BrushStrokes</name>
         <filename>qml-qtquick3d-effects-brushstrokes.html</filename>
     </compound>
@@ -508,24 +512,6 @@
         </member>
     </compound>
     <compound kind="class">
-        <name>QQuick3DExtensionHelpers</name>
-        <filename>qquick3dextensionhelpers.html</filename>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QSSGNodeId</type>
-            <name>getNodeId</name>
-            <anchorfile>qquick3dextensionhelpers.html</anchorfile>
-            <anchor>getNodeId</anchor>
-            <arglist>(const QQuick3DObject &amp;node)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="yes">
-            <type>QSSGResourceId</type>
-            <name>getResourceId</name>
-            <anchorfile>qquick3dextensionhelpers.html</anchorfile>
-            <anchor>getResourceId</anchor>
-            <arglist>(const QQuick3DObject &amp;resource)</arglist>
-        </member>
-    </compound>
-    <compound kind="class">
         <name>QQuick3DGeometry</name>
         <filename>qquick3dgeometry.html</filename>
         <base>QQuick3DObject</base>
@@ -549,20 +535,6 @@
             <anchorfile>qquick3dgeometry.html</anchorfile>
             <anchor>addSubset</anchor>
             <arglist>(int offset, int count, const QVector3D &amp;boundsMin, const QVector3D &amp;boundsMax, const QString &amp;name)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>addTargetAttribute</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>addTargetAttribute-1</anchor>
-            <arglist>(const QQuick3DGeometry::TargetAttribute &amp;attribute)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>addTargetAttribute</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>addTargetAttribute</anchor>
-            <arglist>(quint32 targetId, Attribute::Semantic semantic, int offset, int stride)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
@@ -608,20 +580,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
-            <name>setTargetData</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>setTargetData</anchor>
-            <arglist>(const QByteArray &amp;data)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>setTargetData</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>setTargetData-1</anchor>
-            <arglist>(int offset, const QByteArray &amp;data)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
             <name>setVertexData</name>
             <anchorfile>qquick3dgeometry.html</anchorfile>
             <anchor>setVertexData</anchor>
@@ -639,13 +597,6 @@
             <name>indexData</name>
             <anchorfile>qquick3dgeometry.html</anchorfile>
             <anchor>indexData</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QByteArray</type>
-            <name>targetData</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>targetData</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -668,13 +619,6 @@
             <anchorfile>qquick3dgeometry.html</anchorfile>
             <anchor>primitiveType</anchor>
             <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QQuick3DGeometry::TargetAttribute</type>
-            <name>targetAttribute</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>targetAttribute</anchor>
-            <arglist>(int index) const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>QString</type>
@@ -745,13 +689,6 @@
             <anchorfile>qquick3dgeometry.html</anchorfile>
             <anchor>subsetOffset</anchor>
             <arglist>(int subset) const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>int</type>
-            <name>targetAttributeCount</name>
-            <anchorfile>qquick3dgeometry.html</anchorfile>
-            <anchor>targetAttributeCount</anchor>
-            <arglist>() const const</arglist>
         </member>
     </compound>
     <compound kind="class">
@@ -927,11 +864,6 @@
             <anchor>state-prop</anchor>
             <arglist></arglist>
         </member>
-    </compound>
-    <compound kind="class">
-        <name>QQuick3DRenderExtension</name>
-        <filename>qquick3drenderextension.html</filename>
-        <base>QQuick3DObject</base>
     </compound>
     <compound kind="class">
         <name>QQuick3DTextureData</name>
@@ -1166,13 +1098,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
-            <name>setDepth</name>
-            <anchorfile>qquick3dtexturedata.html</anchorfile>
-            <anchor>setDepth</anchor>
-            <arglist>(int depth)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
             <name>setFormat</name>
             <anchorfile>qquick3dtexturedata.html</anchorfile>
             <anchor>setFormat</anchor>
@@ -1225,13 +1150,6 @@
             <name>textureData</name>
             <anchorfile>qquick3dtexturedata.html</anchorfile>
             <anchor>textureData</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>int</type>
-            <name>depth</name>
-            <anchorfile>qquick3dtexturedata.html</anchorfile>
-            <anchor>depth</anchor>
             <arglist>() const const</arglist>
         </member>
     </compound>
@@ -1488,9 +1406,5 @@
     <compound kind="class">
         <name>QtQuick3D.Helpers.WasdController</name>
         <filename>qml-qtquick3d-helpers-wasdcontroller.html</filename>
-    </compound>
-    <compound kind="class">
-        <name>QtQuick3D.bounds</name>
-        <filename>qml-qtquick3d-bounds.html</filename>
     </compound>
 </tagfile>

@@ -1,11 +1,11 @@
-# Dockerfile: Alpine Qt 6.6
+# Dockerfile: Alpine Qt 6.5
 
-Dockerfile for creating images for building and automated testing of Qt 6 applications.
+Docker image for building and automated testing of Qt 6 applications.
 
 Image configuration:
-- Alpine 3.19
-- Python 3.11.6
-- Qt 6.6.1
+- Alpine 3.18
+- Python 3.11.8
+- Qt 6.5.2
 	- qmake6
 	- qt6-base-dev
 	- qt6-base-dev-tools
@@ -15,12 +15,12 @@ Image configuration:
 	- qt6-image-formats-plugins
 	- qt6-l10n-tools
 	- qt6-translations-l10n
-- GCC/G++ 13.2.1
-- CMake 3.27.8
-- Qbs 2.1.2 (default profile: qt-6)
-- Doxygen 1.9.8
+- GCC/G++ 12.2.1
+- CMake 3.26.5
+- Qbs 2.0.1 (default profile: qt-6)
+- Doxygen 1.9.6
 - coverxygen 1.8.1
 - gcovr 6.0
-- Tags files for Qt 6.6 (to link in Doxygen documentation)
+- Tags files for Qt 6.5 (to link in Doxygen documentation)
 - OpenJDK 17 JRE
 - SonarQube Scanner 5.0.1.3006 (located at `/opt/sonar-scanner`)

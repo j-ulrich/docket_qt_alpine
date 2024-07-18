@@ -358,7 +358,7 @@
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>QSqlQuery</type>
             <name>exec</name>
-            <anchorfile>qsqldatabase-obsolete.html</anchorfile>
+            <anchorfile>qsqldatabase.html</anchorfile>
             <anchor>exec</anchor>
             <arglist>(const QString &amp;query) const const</arglist>
         </member>
@@ -1097,7 +1097,7 @@
             <type></type>
             <name>QSqlField</name>
             <anchorfile>qsqlfield-obsolete.html</anchorfile>
-            <anchor>QSqlField-3</anchor>
+            <anchor>QSqlField-2</anchor>
             <arglist>(const QString &amp;fieldName, QVariant::Type type, const QString &amp;table)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -1197,13 +1197,6 @@
             <anchorfile>qsqlfield.html</anchorfile>
             <anchor>setValue</anchor>
             <arglist>(const QVariant &amp;value)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>swap</name>
-            <anchorfile>qsqlfield.html</anchorfile>
-            <anchor>swap</anchor>
-            <arglist>(QSqlField &amp;other)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -1333,22 +1326,8 @@
             <type>QSqlIndex &amp;</type>
             <name>operator=</name>
             <anchorfile>qsqlindex.html</anchorfile>
-            <anchor>operator-eq-1</anchor>
-            <arglist>(QSqlIndex &amp;&amp;other)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QSqlIndex &amp;</type>
-            <name>operator=</name>
-            <anchorfile>qsqlindex.html</anchorfile>
             <anchor>operator-eq</anchor>
             <arglist>(const QSqlIndex &amp;other)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QSqlIndex</name>
-            <anchorfile>qsqlindex.html</anchorfile>
-            <anchor>QSqlIndex-2</anchor>
-            <arglist>(QSqlIndex &amp;&amp;other)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -1653,13 +1632,6 @@
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>QString</type>
-            <name>boundValueName</name>
-            <anchorfile>qsqlquery.html</anchorfile>
-            <anchor>boundValueName</anchor>
-            <arglist>(int pos) const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QString</type>
             <name>executedQuery</name>
             <anchorfile>qsqlquery.html</anchorfile>
             <anchor>executedQuery</anchor>
@@ -1670,13 +1642,6 @@
             <name>lastQuery</name>
             <anchorfile>qsqlquery.html</anchorfile>
             <anchor>lastQuery</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QStringList</type>
-            <name>boundValueNames</name>
-            <anchorfile>qsqlquery.html</anchorfile>
-            <anchor>boundValueNames</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
@@ -1972,13 +1937,6 @@
             <type>QSqlRecord &amp;</type>
             <name>operator=</name>
             <anchorfile>qsqlrecord.html</anchorfile>
-            <anchor>operator-eq-1</anchor>
-            <arglist>(QSqlRecord &amp;&amp;other)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>QSqlRecord &amp;</type>
-            <name>operator=</name>
-            <anchorfile>qsqlrecord.html</anchorfile>
             <anchor>operator-eq</anchor>
             <arglist>(const QSqlRecord &amp;other)</arglist>
         </member>
@@ -1988,13 +1946,6 @@
             <anchorfile>qsqlrecord.html</anchorfile>
             <anchor>QSqlRecord</anchor>
             <arglist>()</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type></type>
-            <name>QSqlRecord</name>
-            <anchorfile>qsqlrecord.html</anchorfile>
-            <anchor>QSqlRecord-2</anchor>
-            <arglist>(QSqlRecord &amp;&amp;other)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -2086,13 +2037,6 @@
             <anchorfile>qsqlrecord.html</anchorfile>
             <anchor>setValue</anchor>
             <arglist>(int index, const QVariant &amp;val)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>void</type>
-            <name>swap</name>
-            <anchorfile>qsqlrecord.html</anchorfile>
-            <anchor>swap</anchor>
-            <arglist>(QSqlRecord &amp;other)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type></type>
@@ -2475,13 +2419,6 @@
             <anchor>data</anchor>
             <arglist>(int index) = 0</arglist>
         </member>
-        <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>QVariantList &amp;</type>
-            <name>boundValues</name>
-            <anchorfile>qsqlresult.html</anchorfile>
-            <anchor>boundValues-1</anchor>
-            <arglist>()</arglist>
-        </member>
         <member kind="function" protection="protected" virtualness="virtual" static="no">
             <type>virtual bool</type>
             <name>exec</name>
@@ -2651,6 +2588,13 @@
             <arglist>()</arglist>
         </member>
         <member kind="function" protection="protected" virtualness="non" static="no">
+            <type>QList&lt;QVariant&gt; &amp;</type>
+            <name>boundValues</name>
+            <anchorfile>qsqlresult.html</anchorfile>
+            <anchor>boundValues</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="protected" virtualness="non" static="no">
             <type>QSql::ParamType</type>
             <name>bindValueType</name>
             <anchorfile>qsqlresult.html</anchorfile>
@@ -2707,13 +2651,6 @@
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>QStringList</type>
-            <name>boundValueNames</name>
-            <anchorfile>qsqlresult.html</anchorfile>
-            <anchor>boundValueNames</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="protected" virtualness="non" static="no">
             <type>QVariant</type>
             <name>boundValue</name>
             <anchorfile>qsqlresult.html</anchorfile>
@@ -2739,13 +2676,6 @@
             <name>lastInsertId</name>
             <anchorfile>qsqlresult.html</anchorfile>
             <anchor>lastInsertId</anchor>
-            <arglist>() const const</arglist>
-        </member>
-        <member kind="function" protection="protected" virtualness="non" static="no">
-            <type>QVariantList</type>
-            <name>boundValues</name>
-            <anchorfile>qsqlresult.html</anchorfile>
-            <anchor>boundValues</anchor>
             <arglist>() const const</arglist>
         </member>
         <member kind="function" protection="protected" virtualness="non" static="no">

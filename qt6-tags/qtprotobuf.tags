@@ -96,13 +96,6 @@
             <type>bool</type>
             <name>setProperty</name>
             <anchorfile>qprotobufmessage.html</anchorfile>
-            <anchor>setProperty-1</anchor>
-            <arglist>(QAnyStringView propertyName, QVariant &amp;&amp;value)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>bool</type>
-            <name>setProperty</name>
-            <anchorfile>qprotobufmessage.html</anchorfile>
             <anchor>setProperty</anchor>
             <arglist>(QAnyStringView propertyName, const QVariant &amp;value)</arglist>
         </member>
@@ -323,15 +316,8 @@
             <type>bool</type>
             <name>repeatedValueCompare</name>
             <anchorfile>qtprotobuf.html</anchorfile>
-            <anchor>repeatedValueCompare-1</anchor>
-            <arglist>(const QHash&lt;K, V&gt; &amp;a, const QHash&lt;K, V&gt; &amp;b)</arglist>
-        </member>
-        <member kind="function" protection="public" virtualness="non" static="no">
-            <type>bool</type>
-            <name>repeatedValueCompare</name>
-            <anchorfile>qtprotobuf.html</anchorfile>
             <anchor>repeatedValueCompare</anchor>
-            <arglist>(const QList&lt;T&gt; &amp;a, const QList&lt;T&gt; &amp;b)</arglist>
+            <arglist>(const QList&lt;std::shared_ptr&lt;T&gt;&gt; &amp;a, const QList&lt;std::shared_ptr&lt;T&gt;&gt; &amp;b)</arglist>
         </member>
         <member kind="function" protection="public" virtualness="non" static="no">
             <type>void</type>
